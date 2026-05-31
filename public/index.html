@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sunrise Interiors — Talk to a Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --clay: #b5502f;
+    --clay-dark: #8a3c22;
+    --plaster: #f6f0e7;
+    --charcoal: #2a2622;
+    --stone: #6f675d;
+    --line: #e0d5c4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--plaster);
+    color: var(--charcoal);
+    margin: 0;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--clay);
+    display: inline-block;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    max-width: 14ch;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--clay);
+  }
+  .sub {
+    font-size: 1.05rem;
+    color: var(--stone);
+    max-width: 46ch;
+    line-height: 1.55;
+    margin: 0 0 48px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 36px; }
+  }
+  .swatches {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .swatch {
+    width: 34px; height: 34px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .promise {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    margin-top: 28px;
+  }
+  .promise-row {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .promise-row:last-child { border-bottom: none; }
+  .promise-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--clay);
+    flex-shrink: 0;
+    width: 22px;
+  }
+  .promise-text { font-size: 0.95rem; color: var(--charcoal); }
+  .promise-text b { font-weight: 600; }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 32px;
+  }
+  .card h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 0 0 6px;
+  }
+  .card .hint {
+    font-size: 0.85rem;
+    color: var(--stone);
+    margin: 0 0 24px;
+  }
+  label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin: 0 0 8px;
+  }
+  .field { margin-bottom: 18px; }
+  input, select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 0.98rem;
+    font-family: 'Inter', sans-serif;
+    background: #fdfbf8;
+    color: var(--charcoal);
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--clay);
+    box-shadow: 0 0 0 3px rgba(181,80,47,0.12);
+  }
+  button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    background: var(--clay);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  button:hover:not(:disabled) { background: var(--clay-dark); }
+  button:disabled { background: #d8c7ba; cursor: not-allowed; }
+  #status {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Sunrise Interiors — Design Consult Line</div>
+  <h1>Tell us about your space.<br><em>We'll call you</em> in under a minute.</h1>
+  <p class="sub">Share a few details and one of our design consultants will ring you right away to talk through scope, timeline, and next steps.</p>
+
+  <div class="layout">
+    <div>
+      <div class="swatches">
+        <div class="swatch" style="background:#b5502f"></div>
+        <div class="swatch" style="background:#d9c7a8"></div>
+        <div class="swatch" style="background:#2a2622"></div>
+        <div class="swatch" style="background:#8a9a7e"></div>
+      </div>
+      <div class="promise">
+        <div class="promise-row">
+          <span class="promise-num">01</span>
+          <span class="promise-text">You share your project — <b>kitchen, full flat, one room, anything.</b></span>
+        </div>
+        <div class="promise-row">
+          <span class="promise-num">02</span>
+          <span class="promise-text">A consultant calls within seconds, <b>in Hindi or English</b> — whatever's easiest for you.</span>
+        </div>
+        <div class="promise-row">
+          <span class="promise-num">03</span>
+          <span class="promise-text">We lock in a <b>free consultation slot</b> — at your flat or over video.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Get a callback</h2>
+      <p class="hint">Takes 20 seconds. No obligation.</p>
+      <form id="leadForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" type="text" placeholder="e.g. Ananya Sharma" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" placeholder="+91 98765 43210" required />
+        </div>
+        <div class="field">
+          <label for="projectType">What are you looking to do?</label>
+          <select id="projectType">
+            <option value="Full flat interior">Full flat interior</option>
+            <option value="Modular kitchen">Modular kitchen</option>
+            <option value="Specific rooms">Specific rooms</option>
+            <option value="Furnishing only">Furnishing only</option>
+            <option value="Still exploring">Still exploring</option>
+          </select>
+        </div>
+        <button id="callBtn" type="submit">Call me now</button>
+        <div id="status"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById('leadForm');
+const btn = document.getElementById('callBtn');
+const status = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const projectType = document.getElementById('projectType').value;
+
+  if (!phone.startsWith('+')) {
+    status.innerHTML = '<span class="dot" style="background:#b5502f"></span> Include your country code, e.g. +91...';
+    return;
+  }
+
+  btn.disabled = true;
+  status.innerHTML = '<span class="dot" style="background:#c9a35a"></span> Calling you now...';
+
+  try {
+    const res = await fetch('/api/call', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone, name, projectType })
+    });
+    const data = await res.json();
+    if (res.ok) {
+      status.innerHTML = '<span class="dot" style="background:#5a7a4a"></span> Your phone should be ringing — pick up!';
+    } else {
+      status.innerHTML = '<span class="dot" style="background:#b5502f"></span> ' + (data.error || 'Something went wrong.');
+    }
+  } catch (e) {
+    status.innerHTML = '<span class="dot" style="background:#b5502f"></span> Network error — is the server running?';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
