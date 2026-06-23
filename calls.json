@@ -1,0 +1,16 @@
+[
+  {
+    "vapi_call_id": "019f9de1-c279-7ee1-9f2d-a5ecafd803ce",
+    "phone_number": "+918010726861",
+    "name": "Nakkshh",
+    "project_type": "Modular kitchen",
+    "status": "completed",
+    "ended_reason": "customer-ended-call",
+    "transcript": "AI: Hi. This is Dea calling from Sunrise Interiors. You'd shared your number about doing up your new flat. Is this an okay time to talk for a couple of minutes?\nAI: Oh, sorry. I think there might be a language mix up there. Are you comfortable speaking in English? Or would you prefer I switch to हिंदी?\nUser: Yes. I'm comfortable with English. And then I'm able to know this time to speak.\nAI: That's great. Thanks for confirming. So to get a better idea of what you're looking for, are you planning a full home interior project, or are you focusing on specific areas like a modular kitchen or just furnishing for now?\nUser: I'm looking for validation\nAI: I see. Are you looking for a a professional design consultation to validate your own ideas? Or floor plans for the new flap.\nUser: Design verification.\nAI: Got it. So you've got some ideas in mind and want a professional eye to look them over. That makes total sense. Our senior designers do exactly that kind of review to make sure everything is functional and feasible. Would you like to set up a quick video call or a site visit this week? To go over your plans?\nUser: Yes.\nAI: Perfect. Does Thursday afternoon work for you? Maybe around 3 PM for a video call.\nUser: I said Monday.\nAI: My apologies. I must have misheard you. Monday works perfectly for me. Would 11 AM on Mondays suit your schedule for that video call?\nUser: Yes, Ok, good.\nAI: Great. That's locked in. I'll send you a calendar invite. And the meeting link on WhatsApp shortly. Thanks for your time, and I look forward to connecting on Monday at 11 AM.\nUser: Ok, bye bye.\nAI: Bye. Have a great day.\n",
+    "summary": "The call was initiated by Sunrise Interiors to discuss the user's new flat. The user clarified they are seeking \"design verification\" for their existing interior ideas. They successfully scheduled a video call for Monday at 11 AM to have their plans reviewed by a senior designer.",
+    "recording_url": "https://94bdb67bb98da30b06bdd917725c037d.r2.cloudflarestorage.com/hipaa-recordings/019f9de1-c279-7ee1-9f2d-a5ecafd803ce-1785060409046-7a128bc0-862b-4ffe-8407-ca54f075824c-mono.wav",
+    "duration_seconds": 146.036,
+    "created_at": "2026-07-26T10:04:06.127Z",
+    "ended_at": "2026-07-26T10:06:51.304Z"
+  }
+]
